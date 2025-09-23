@@ -1,0 +1,49 @@
+//LB1варіант 8
+
+#include <iostream>
+#include <cmath> 
+
+using namespace std;
+
+int main() {
+    double a = 1;
+    double b = 12.21;
+
+    double c = cbrt(a);
+    double d = cbrt(b);
+
+    double y = (0.81 * c - (1.0 / 2.125) * d) * exp(a);
+
+    cout << "a = " << a << ", b = " << b << endl;
+    cout << "y = " << y << endl;
+
+    return 0;
+}
+
+//LB1варіант 13
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double a = 3.0;
+    double b = 2.712;
+    const double PI = acos(-1.0);
+
+    double part1 = pow((a*a) / pow(b, 3.0), 2.0/3.0);
+
+    double num = 0.807 * (1.0 - pow(sin((a - b) * PI / 4.0), 2.0));
+    double den = 0.312 * (1.0 + pow(cos((b + a) * PI / 4.0), 2.0));
+
+    double exponent = num / den;
+
+    double y = part1 * exp(exponent);
+
+    cout << fixed << setprecision(6);
+    cout << "a = " << a << ", b = " << b << endl;
+    cout << "y = " << y << endl;
+
+    return 0;
+}
