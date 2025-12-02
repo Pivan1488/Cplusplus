@@ -1,0 +1,53 @@
+//LB2
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double x, A, C;
+    cout << "Enter x: ";
+    cin >> x;
+    cout << "Enter A: ";
+    cin >> A;
+    cout << "Enter C: ";
+    cin >> C;
+
+    double Y;
+
+    if (A == C) {
+        Y = x * pow(A - C, 3);
+    } else {
+        Y = pow(x, 3) - A;
+    }
+
+    cout << "Y = " << Y << endl;
+    return 0;
+}
+
+// Завдання 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    double x, y;
+    cout << "Enter x: ";
+    cin >> x;
+    cout << "Enter y: ";
+    cin >> y;
+
+    bool inLeftTop = (x >= -1 && x <= 0 && y >= 0 && y <= 1);
+    bool inRightBottom = (x >= 0 && x <= 1 && y >= -1 && y <= 0);
+
+    if (inLeftTop || inRightBottom) {
+        cout << "The point falls into the shaded area." << endl;
+    } else {
+        cout << "The point does NOT fall into the shaded area" << endl;
+    }
+
+    return 0;
+}
+
+
+
