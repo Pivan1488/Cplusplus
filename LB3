@@ -1,0 +1,49 @@
+Завданням 1
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cout << "Enter a three-digit number N: ";
+    cin >> N;
+
+    int a = N / 100;        
+    int b = (N / 10) % 10;  
+    int c = N % 10;         
+
+    int count = 0;
+
+    if (a % 2 != 0) count++;
+    if (b % 2 != 0) count++;
+    if (c % 2 != 0) count++;
+
+    cout << "Number of odd digits: " << count << endl;
+
+    return 0;
+}
+
+Завдання 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    int month;
+    cout << "Enter the month number (1-7): ";
+    cin >> month;
+
+    switch (month) {
+        case 1: cout << "Січень / January"; break;
+        case 2: cout << "Лютий / February"; break;
+        case 3: cout << "Березень / March"; break;
+        case 4: cout << "Квітень / April"; break;
+        case 5: cout << "Травень / May"; break;
+        case 6: cout << "Червень / June"; break;
+        case 7: cout << "Липень / July"; break;
+
+        default:
+            cout << "Error: choose a number from 1 to 7";
+    }
+
+    return 0;
+}
+
