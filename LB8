@@ -1,0 +1,77 @@
+//Завдання 1
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    const int m = 12;
+    int arr[m];
+
+    // Введення масиву
+    cout << "Enter 12 integers:\n";
+    for (int i = 0; i < m; i++) {
+        cin >> arr[i];
+    }
+
+    // Копії для різних сортувань
+    int asc[m], desc[m];
+    copy(arr, arr + m, asc);
+    copy(arr, arr + m, desc);
+
+    // Сортування зростанням
+    sort(asc, asc + m);
+
+    // Сортування спаданням
+    sort(desc, desc + m, greater<int>());
+
+    // Вивід
+    cout << "\nSorted ascending: ";
+    for (int i = 0; i < m; i++) cout << asc[i] << " ";
+
+    cout << "\nSorted descending: ";
+    for (int i = 0; i < m; i++) cout << desc[i] << " ";
+
+    cout << endl;
+    return 0;
+}
+//Завдання 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int n = 12;
+    int arr[n];
+
+    // Введення масиву
+    cout << "Enter 12 integers:\n";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Знаходимо індекс першого максимального елемента
+    int maxVal = arr[0];
+    int maxIndex = 0;
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > maxVal) {
+            maxVal = arr[i];
+            maxIndex = i;
+        }
+    }
+
+    // Замінюємо нулями від’ємні елементи перед ним
+    for (int i = 0; i < maxIndex; i++) {
+        if (arr[i] < 0) {
+            arr[i] = 0;
+        }
+    }
+
+    // Вивід нового масиву
+    cout << "\nModified array:\n";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+
+    cout << endl;
+    return 0;
+}
