@@ -21,3 +21,73 @@ int main(void) {
     cout << (answer ? "THAT'S TRUE :)" : "THAT'S NOT TRUE :(") << endl;
     return 0;
 }
+
+//Завдання 7 
+#include <iostream>  
+#include <iomanip>    
+
+using namespace std;
+
+int main() {
+    double num1 = 2.3;
+    double num2 = 2.3;
+    double num3 = 2.123456;
+    double num4 = 2.123456;
+    double num5 = 2.123456;
+    cout << num1 << endl;
+    cout << fixed << setprecision(2) << num2 << endl;
+    cout.unsetf(ios::fixed);   
+    cout << num3 << endl;
+    cout << fixed << setprecision(2) << num4 << endl;
+    cout << fixed << setprecision(0) << num5 << endl;
+
+    return 0;
+}
+
+//Завдання 8
+#include <iostream>  
+#include <cmath>      
+using namespace std;
+
+int main() {
+    int a, b;      
+    const double EPSILON = 0.000001;  
+
+      cout << "Enter first integer: ";
+    cin >> a;
+    cout << "Enter second integer: ";
+    cin >> b;
+
+       double result1 = 1.0 / a;
+    double result2 = 1.0 / b;
+
+      if (fabs(result1 - result2) < EPSILON) {
+        cout << "Results are equal" << endl;
+    } else {
+        cout << "Results are not equal" << endl;
+    }
+
+    return 0;
+}
+
+
+//Завдання 9
+#include <iostream>  
+using namespace std;
+
+int main() {
+    int a, b, c, d; 
+    cout << "Enter four numbers (from 1 to 255): " << endl;
+    cin >> a >> b >> c >> d;
+    if ((a >= 1 && a <= 255) &&
+        (b >= 1 && b <= 255) &&
+        (c >= 1 && c <= 255) &&
+        (d >= 1 && d <= 255)) {
+        cout << a << "." << b << "." << c << "." << d << endl;
+
+    } else {
+        cout << "Error: numbers must be between 1 and 255!" << endl;
+    }
+
+    return 0;
+}
