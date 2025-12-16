@@ -1,0 +1,33 @@
+Завдання 2.6
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    //Task 1
+    int c0;
+    int steps = 0;
+
+    cout << "Enter any integer (c0 > 0): ";
+    cin >> c0;
+
+    while (c0 > 0) {
+        if (c0 != 1) {
+            if (c0 % 2 == 0) {
+                c0 /= 2;
+                cout << c0 << "\n";
+                steps++;
+            }
+            else {
+                c0 = 3 * c0 + 1;
+                cout << c0 << "\n";
+                steps++;
+            }
+        }
+        else {
+            cout << "steps = " << steps;
+            break;
+        }
+    }
+}
+
