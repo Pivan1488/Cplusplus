@@ -1,0 +1,190 @@
+//Завдання 3
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    srand(time(NULL));
+
+    int arr_len;
+
+    cout << "Enter array length: ";
+    cin >> arr_len;
+
+    vector<int> arr(arr_len);
+
+    cout << "Generated array: ";
+
+    for (int i = 0; i < arr_len; i++) {
+        arr[i] = rand() % 100;
+        cout << arr[i] << " ";
+    }
+
+    cout << endl;
+
+    int maxIndex = 0;
+    int minIndex = 0;
+
+    for (int i = 1; i < arr_len; i++) {
+        if (arr[i] > arr[maxIndex]) {
+            maxIndex = i;
+        }
+
+        if (arr[i] < arr[minIndex]) {
+            minIndex = i;
+        }
+    }
+
+    swap(arr[maxIndex], arr[minIndex]);
+
+    cout << "Modified array: ";
+
+    for (int i = 0; i < arr_len; i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
+
+
+//Завдання 4
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    srand(time(NULL));
+
+    int length;
+    int A;
+    int countGreater = 0;
+
+    cout << "Enter array length: ";
+    cin >> length;
+
+    vector<int> arr(length);
+
+    cout << "Enter value A: ";
+    cin >> A;
+
+    cout << "Generated array: ";
+
+    for (int i = 0; i < length; i++) {
+        arr[i] = rand() % 100;
+        cout << arr[i] << " ";
+
+        if (arr[i] > A) {
+            countGreater++;
+        }
+    }
+
+    cout << endl;
+
+    cout << "Amount of elements greater than A: "
+         << countGreater;
+
+    return 0;
+}
+
+
+//Завдання 5
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    srand(time(NULL));
+
+    int len;
+
+    cout << "Enter array length: ";
+    cin >> len;
+
+    vector<int> arr(len);
+
+    cout << "Generated array: ";
+
+    for (int i = 0; i < len; i++) {
+        arr[i] = rand() % 100;
+        cout << arr[i] << " ";
+    }
+
+    cout << endl;
+
+    int maxInd = 0;
+
+    for (int i = 1; i < len; i++) {
+        if (arr[i] > arr[maxInd]) {
+            maxInd = i;
+        }
+    }
+
+    int secondMaxInd = (maxInd == 0) ? 1 : 0;
+
+    for (int i = 0; i < len; i++) {
+        if (i != maxInd &&
+            arr[i] > arr[secondMaxInd]) {
+
+            secondMaxInd = i;
+        }
+    }
+
+    cout << "Second greatest element: "
+         << arr[secondMaxInd];
+
+    return 0;
+}
+
+//Завдання 6
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    srand(time(NULL));
+
+    int size;
+    bool found = false;
+
+    cout << "Enter array length: ";
+    cin >> size;
+
+    vector<int> arr(size);
+
+    cout << "Generated array: ";
+
+    for (int i = 0; i < size; i++) {
+        arr[i] = rand() % 7 - 3;
+        cout << arr[i] << " ";
+    }
+
+    cout << endl;
+
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == 0) {
+            cout << "Index of first zero element: "
+                 << i;
+
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        cout << "Array does not contain zero elements.";
+    }
+
+    return 0;
+}
