@@ -1,0 +1,118 @@
+//Завдання 1
+#include <iostream>
+
+using namespace std;
+
+struct Date {
+    int hours;
+    int minutes;
+};
+
+int main() {
+    Date time;
+
+    int addedMinutes;
+
+    cout << "Enter hours: ";
+    cin >> time.hours;
+
+    while (time.hours < 0 || time.hours > 23) {
+        cout << "Incorrect value. Enter hours again: ";
+        cin >> time.hours;
+    }
+
+    cout << "Enter minutes: ";
+    cin >> time.minutes;
+
+    while (time.minutes < 0 || time.minutes > 59) {
+        cout << "Incorrect value. Enter minutes again: ";
+        cin >> time.minutes;
+    }
+
+    cout << "Enter amount of minutes: ";
+    cin >> addedMinutes;
+
+    int totalMinutes =
+        time.hours * 60 +
+        time.minutes +
+        addedMinutes;
+
+    totalMinutes %= 24 * 60;
+
+    time.hours = totalMinutes / 60;
+    time.minutes = totalMinutes % 60;
+
+    cout << "Result time: ";
+
+    cout << time.hours << ":";
+
+    if (time.minutes < 10) {
+        cout << "0";
+    }
+
+    cout << time.minutes;
+
+    return 0;
+}
+
+
+//Завдання 2
+#include <iostream>
+
+using namespace std;
+
+struct Date {
+    int hours;
+    int minutes;
+};
+
+int main() {
+    Date start;
+    Date finish;
+
+    cout << "Enter start time (hours minutes): ";
+    cin >> start.hours >> start.minutes;
+
+    while (start.hours < 0 || start.hours > 23 ||
+           start.minutes < 0 || start.minutes > 59) {
+
+        cout << "Incorrect time. Enter again: ";
+        cin >> start.hours >> start.minutes;
+    }
+
+    cout << "Enter finish time (hours minutes): ";
+    cin >> finish.hours >> finish.minutes;
+
+    while (finish.hours < 0 || finish.hours > 23 ||
+           finish.minutes < 0 || finish.minutes > 59) {
+
+        cout << "Incorrect time. Enter again: ";
+        cin >> finish.hours >> finish.minutes;
+    }
+
+    int startTotal =
+        start.hours * 60 + start.minutes;
+
+    int finishTotal =
+        finish.hours * 60 + finish.minutes;
+
+    int duration;
+
+    if (finishTotal >= startTotal) {
+        duration = finishTotal - startTotal;
+    }
+    else {
+        duration =
+            (24 * 60 - startTotal) + finishTotal;
+    }
+
+    int resultHours = duration / 60;
+    int resultMinutes = duration % 60;
+
+    cout << "Duration: "
+         << resultHours
+         << ":"
+         << resultMinutes;
+
+    return 0;
+}
